@@ -22,6 +22,11 @@
   <meta name="twitter:title" content="Marina Lomeu - Portfolio" />
   <meta name="twitter:description" content="Projetos, processos, produtos e soluções digitais." />
   <meta name="twitter:image" content="https://marinalomeu.github.io/portfolio-preview.jpg?v=1" />
+  <link rel="canonical" href="https://marinalomeu.github.io/" />
+<link rel="alternate" hreflang="pt-BR" href="https://marinalomeu.github.io/" />
+<link rel="alternate" hreflang="en" href="https://marinalomeu.github.io/en/" />
+<link rel="alternate" hreflang="x-default" href="https://marinalomeu.github.io/" />
+<meta property="og:locale:alternate" content="en_US" />
   <title>Marina Lomeu — Tecnologia, Processos & Projetos</title>
   <link rel="icon" type="image/png" sizes="256x256" href="/ml-icon.png" />
   <link rel="apple-touch-icon" href="/ml-icon.png" />
@@ -108,10 +113,33 @@
     @media(max-width:600px){.shell{padding:0 19px}.nav{height:67px}.nav-links a:not(.tiny-pill){display:none}.hero{padding:50px 0}.hero h1{font-size:45px}.hero-copy{font-size:15px}.orb-card{min-height:260px}.orb{width:170px;height:170px}.orblabel{font-size:10px;padding:8px}.l1{top:28px;left:16px}.l2{right:12px;bottom:25px}.l3{left:12px;bottom:24px}.sec{padding:57px 0}.stats,.project-grid,.education,.skillcols{grid-template-columns:1fr}.feature{padding:17px}.project-visual{min-height:230px}.project-details{padding:8px}.job-top{display:block}.period{display:block;margin-top:5px}.contact{padding:32px 23px}.contact h2{font-size:30px}.footer{display:block}.footer-links{margin-top:9px}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
     @media print{body{background:white;color:#111;font-size:10px}.nav,.actions,.orb-card,.project-visual,.footer,.contact,.note{display:none!important}.shell{max-width:none;padding:0 12px}.hero{display:block;min-height:0;padding:12px 0}.hero h1{font-size:30px;margin:8px 0;letter-spacing:-1px}.hero-copy{font-size:10px;max-width:none}.sec{padding:14px 0}.sec.alternate{background:white}.section-top{margin-bottom:12px}.section-top h2{font-size:20px;margin-top:4px}.section-top p{font-size:10px}.feature{display:block;padding:10px}.project-grid{gap:7px;margin-top:8px}.proj{padding:10px}.proj h3{font-size:14px;margin:5px 0}.proj .number{display:none}.tags{margin-top:6px}.tag{font-size:8px;padding:1px 4px}.scope{margin:4px 0}.scope li{margin:2px 0}.timeline{padding-left:16px}.job{padding-bottom:12px}.job::before{left:-23px}.job h3{font-size:12px}.job p{margin-top:4px}.skill{padding:8px}.skill p,.edu p,.job p,.proj p{font-size:10px}.edu{padding:8px}.print-only{display:block}.section-top .accent-rule{display:none}}
-  </style>
+  
+.nav-tools{display:flex;align-items:center;gap:15px;min-width:0}
+.lang-toggle{display:flex;align-items:center;gap:2px;padding:3px;border:1px solid #d7c6d1;border-radius:100px;background:#f9f5f7;flex-shrink:0}
+.lang-toggle a{padding:5px 7px;min-width:31px;text-align:center;font-size:11px;line-height:1.35;font-weight:800;color:var(--plum);border-radius:100px}
+.lang-toggle a[aria-current="page"]{background:var(--plum);color:#fffdfa}
+.lang-toggle a:hover:not([aria-current="page"]){background:#ebe0e9}
+.lang-toggle a:focus-visible{outline:2px solid var(--plum);outline-offset:2px}
+@media(max-width:460px){.nav-tools{gap:8px}.nav-links{display:none}}
+</style>
 </head>
 <body>
-  <header class="shell"><nav class="nav" aria-label="Navegação principal"><a class="brand" href="#inicio">marina<span>.</span>lomeu</a><div class="nav-links"><a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#experiencia">Experiência</a><a href="#competencias">Competências</a><a class="tiny-pill" href="#contato">Contato ↗</a></div></nav></header>
+  <script>
+(function(){
+  const key='marina_portfolio_language';
+  const requested=new URLSearchParams(location.search).get('lang');
+  if(requested==='pt'||requested==='en'){
+    try{localStorage.setItem(key,requested)}catch(e){}
+    if(requested==='en')location.replace('/en/'+location.hash);
+    return;
+  }
+  let saved=null;
+  try{saved=localStorage.getItem(key)}catch(e){}
+  const browser=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();
+  if(saved==='en'||(!saved&&browser.startsWith('en')))location.replace('/en/'+location.search+location.hash);
+})();
+</script>
+  <header class="shell"><nav class="nav" aria-label="Navegação principal"><a class="brand" href="#inicio">marina<span>.</span>lomeu</a><div class="nav-tools"><div class="nav-links"><a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#experiencia">Experiência</a><a href="#competencias">Competências</a><a class="tiny-pill" href="#contato">Contato ↗</a></div><div class="lang-toggle" role="group" aria-label="Idioma do site"><a href="/" data-site-lang="pt" lang="pt-BR" aria-current="page">PT</a><a href="/en/" data-site-lang="en" lang="en">EN</a></div></div></nav></header>
   <main>
     <div class="shell" id="inicio"><div class="hero"><div><div class="eyebrow">Tecnologia • Processos • Projetos</div><h1>Entre ideias e <em>soluções.</em></h1><p class="hero-copy">Sou <strong>Marina Lomeu</strong>, estudante de Engenharia de Produção com experiência em desenvolvimento web, sistemas corporativos e melhoria de processos. Conecto visão de negócio, organização de projetos e tecnologia para transformar necessidades em soluções digitais.</p><div class="actions"><a class="btn" href="#projetos">Conheça meus projetos <span aria-hidden="true">↗</span></a><a class="btn outline" href="#experiencia">Minha trajetória <span aria-hidden="true">↓</span></a></div></div><div class="orb-card" aria-label="Ilustração abstrata tecnológica"><div class="small-dots"><i></i><i></i><i></i></div><span class="orblabel l1">✦ Digital solutions</span><div class="orb"></div><span class="orblabel l2">✧ Process & product</span><span class="orblabel l3">⌘ AI assisted</span></div></div></div>
     <section class="sec alternate" id="sobre"><div class="shell"><div class="section-top"><div><div class="eyebrow">01 / Apresentação</div><h2>Tecnologia com visão de negócio.</h2><div class="accent-rule"></div></div><p>Meu interesse está na interseção entre tecnologia, processos internos e gestão de projetos — desde a compreensão de um problema até a organização e evolução de uma solução.</p></div><p style="max-width:860px;color:var(--muted)">Atuei em desenvolvimento web full stack, resolução de demandas técnicas, utilização de CRM e apoio à melhoria de fluxos operacionais. Atualmente, também conduzo projetos digitais independentes, aplicando desenvolvimento assistido por inteligência artificial, levantamento de requisitos e organização de entregas. Busco oportunidades em que possa contribuir, aprender e evoluir em ambientes orientados a tecnologia e processos.</p><div class="stats"><div class="stat"><strong>Web & software</strong><span>Experiência com front-end, back-end e manutenção de sistemas</span></div><div class="stat"><strong>Projetos digitais</strong><span>Planejamento, requisitos e acompanhamento de entregas</span></div><div class="stat"><strong>Inglês fluente</strong><span>Comunicação profissional e interesse em ambientes internacionais</span></div></div></div></section>
@@ -190,6 +218,9 @@
   <footer class="shell footer"><div>© <span id="year">2026</span> Marina Lomeu. Desenvolvido como portfólio profissional.</div><div class="footer-links"><a href="https://www.linkedin.com/in/marinalomeu" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/marinalomeu" target="_blank" rel="noopener noreferrer">GitHub</a></div></footer>
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
+    document.querySelectorAll('[data-site-lang]').forEach(link=>link.addEventListener('click',()=>{
+  try{localStorage.setItem('marina_portfolio_language',link.dataset.siteLang)}catch(e){}
+}));
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
     form.addEventListener('submit', async (event) => {
